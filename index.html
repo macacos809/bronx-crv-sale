@@ -124,53 +124,13 @@
     
     <h2>Interested? Send a Message</h2>
 
-    <form id="contact-form" action="YOUR-FORMSPREE-LINK" method="POST">
-        
-        <!-- Spam Protection Honeypot -->
-        <input type="text" name="_gotcha" class="hidden">
-
-        <!-- Email Subject -->
-        <input type="hidden" name="_subject" value="CR-V Buyer Inquiry">
-
-        <input type="text" name="name" placeholder="Your Name / Nombre" required>
-        <input type="email" name="email" placeholder="Your Email / Correo Electrónico" required>
-        <input type="text" name="phone" placeholder="Your Phone Number / Teléfono">
-        <textarea name="message" rows="5" placeholder="Your Message / Mensaje" required></textarea>
-
-        <button class="button" type="submit">
-            Send Message / Enviar Mensaje
-        </button>
-    </form>
-
-    <div class="thank-you" id="thank-you">
-        ✅ Thank you! Your message has been sent.  
-        ¡Gracias! Tu mensaje ha sido enviado.
+    <div class="center">
+        <a href="tel:+13472803008" class="phone-button">
+            📞 Call or Text: (347) 280-3008
+        </a>
     </div>
 
 </div>
-
-<script>
-const form = document.getElementById("contact-form");
-const thankYou = document.getElementById("thank-you");
-
-form.addEventListener("submit", async function(e) {
-    e.preventDefault();
-    const data = new FormData(form);
-    const action = form.action;
-
-    fetch(action, {
-        method: "POST",
-        body: data,
-        headers: { 'Accept': 'application/json' }
-    }).then(response => {
-        if (response.ok) {
-            form.reset();
-            thankYou.style.display = "block";
-        } else {
-            alert("Oops! Something went wrong.");
-        }
-    });
-});
 </script>
 
     
